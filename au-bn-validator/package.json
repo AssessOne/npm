@@ -1,0 +1,22 @@
+{
+  "name": "au-bn-validator",
+  "version": "1.0.0",
+  "description": "Validates Australian Business Number (ABN), Australian Company Number (ACN) & Australian Registered Body Number (ARBN)",
+  "main": "lib/au-bn-validator.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iiwebi/npm/au-bn-validator"
+  },
+  "keywords": [
+    "abn",
+    "acn",
+    "arbn",
+    "validator",
+    "validation"
+  ],
+  "author": "Aruna Balasubramanian <me@aruna.online>",
+  "license": "MIT"
+}
