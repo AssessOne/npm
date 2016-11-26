@@ -15,7 +15,7 @@ As command line program,
 
 ## Usage
 
-    var validator = require('au-bn-validato');
+    var validator = require('au-bn-validator');
 
     console.log(validator.validateABN('83 914 571 673'));	// true
     console.log(validator.validateABN('83914571673'));		// true

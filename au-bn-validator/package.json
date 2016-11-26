@@ -1,6 +1,6 @@
 {
   "name": "au-bn-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validates Australian Business Number (ABN), Australian Company Number (ACN) & Australian Registered Body Number (ARBN)",
   "main": "lib/au-bn-validator.js",
   "scripts": {
