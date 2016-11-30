@@ -20,12 +20,35 @@ exports.validateABN = function (abn) {
 
     var rem = abnSum % modulus;
 
-    return rem === 0;
+    return abnSum > 0 && rem === 0;
 };
 
 exports.validateACN = validateACNorARBN;
 
 exports.validateARBN = validateACNorARBN;
+
+exports.validateTFN = function (tfn) {
+    var weights = [1, 4, 3, 7, 5, 8, 6, 9, 10];
+    var modulus = 11;
+
+    if (typeof tfn === 'string') {
+        tfn = tfn.replace(/\s/g, '').replace(/-/g, '').split('');
+    }
+
+    if (tfn.length !== 9) {
+        return false;
+    }
+
+    var tfnSum = weights.map(function (val, index) {
+        return val * tfn[index];
+    }).reduce(function (p, w) {
+        return p + w;
+    }, 0);
+
+    var rem = tfnSum % modulus;
+
+    return tfnSum > 0 && rem === 0;
+};
 
 function validateACNorARBN(acn) {
     var weights = [8, 7, 6, 5, 4, 3, 2, 1];
@@ -47,5 +70,5 @@ function validateACNorARBN(acn) {
 
     var rem = (modulus - (acnSum % modulus)) % modulus;
 
-    return rem === parseInt(acn[8]);
+    return acnSum > 0 && rem === parseInt(acn[8]);
 }

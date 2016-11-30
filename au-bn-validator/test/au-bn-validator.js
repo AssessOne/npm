@@ -43,10 +43,34 @@ describe('ACN Validator', function () {
 
     it('should return false for invalid ACNs', function () {
 
-        var acns = ['', '0', '000 000 001'];
+        var acns = ['', '0', '000 000 000'];
 
         acns.forEach(function (acn) {
             assert.equal(validator.validateACN(acn), false);
+        });
+
+    });
+
+});
+
+describe('TFN Validator', function () {
+
+    it('should return true for valid TFNs', function () {
+
+        var abns = ['876 543 210', '876543210'];
+
+        abns.forEach(function (abn) {
+            assert.equal(validator.validateTFN(abn), true);
+        });
+
+    });
+
+    it('should return false for invalid TFNs', function () {
+
+        var abns = ['', '0', '000 000 000'];
+
+        abns.forEach(function (abn) {
+            assert.equal(validator.validateTFN(abn), false);
         });
 
     });
