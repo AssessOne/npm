@@ -50,6 +50,29 @@ exports.validateTFN = function (tfn) {
     return tfnSum > 0 && rem === 0;
 };
 
+exports.validateMedicareNumber = function (mcn) {
+    var weights = [1, 3, 7, 9, 1, 3, 7, 9];
+    var modulus = 10;
+
+    if (typeof mcn === 'string') {
+        mcn = mcn.replace(/\s/g, '').replace(/-/g, '').replace(/\//g, '').split('');
+    }
+
+    if (mcn.length !== 11) {
+        return false;
+    }
+
+    var mcnSum = weights.map(function (val, index) {
+        return val * mcn[index];
+    }).reduce(function (p, w) {
+        return p + w;
+    }, 0);
+
+    var rem = mcnSum % modulus;
+
+    return mcnSum > 0 && rem === parseInt(mcn[8]);
+};
+
 function validateACNorARBN(acn) {
     var weights = [8, 7, 6, 5, 4, 3, 2, 1];
     var modulus = 10;

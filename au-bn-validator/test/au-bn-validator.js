@@ -59,18 +59,42 @@ describe('TFN Validator', function () {
 
         var abns = ['876 543 210', '876543210'];
 
-        abns.forEach(function (abn) {
-            assert.equal(validator.validateTFN(abn), true);
+        abns.forEach(function (tfn) {
+            assert.equal(validator.validateTFN(tfn), true);
         });
 
     });
 
     it('should return false for invalid TFNs', function () {
 
-        var abns = ['', '0', '000 000 000'];
+        var tfns = ['', '0', '000 000 000'];
 
-        abns.forEach(function (abn) {
-            assert.equal(validator.validateTFN(abn), false);
+        tfns.forEach(function (tfn) {
+            assert.equal(validator.validateTFN(tfn), false);
+        });
+
+    });
+
+});
+
+describe('Medicare Number Validator', function () {
+
+    it('should return true for valid Medicare Numbers', function () {
+
+        var mcns = ['2428 77813 2/1', '2428778132/1'];
+
+        mcns.forEach(function (mcn) {
+            assert.equal(validator.validateMedicareNumber(mcn), true);
+        });
+
+    });
+
+    it('should return false for invalid Medicare Numbers', function () {
+
+        var mcns = ['', '0', '000 000 0000/0'];
+
+        mcns.forEach(function (mcn) {
+            assert.equal(validator.validateMedicareNumber(mcn), false);
         });
 
     });
