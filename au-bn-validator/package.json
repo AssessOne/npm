@@ -1,6 +1,6 @@
 {
   "name": "au-bn-validator",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Validates Australian Business Number (ABN), Australian Company Number (ACN), Australian Registered Body Number (ARBN), Australian Tax File Number (TFN) & Australian Medicare Number",
   "main": "lib/au-bn-validator.js",
   "scripts": {
@@ -11,11 +11,20 @@
     "url": "https://github.com/iiwebi/npm/tree/master/au-bn-validator"
   },
   "keywords": [
-    "abn",
-    "acn",
-    "arbn",
+    "file",
+    "tax",
+    "Australia",
+    "number",
+    "business",
+    "Australian",
     "validator",
-    "validation"
+    "validation",
+    "medicare",
+    "tfn",
+    "arbn",
+    "acn",
+    "abn",
+    "validate"
   ],
   "author": "Aruna Balasubramanian <me@aruna.online>",
   "license": "MIT"
